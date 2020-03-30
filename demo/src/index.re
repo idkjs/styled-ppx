@@ -10,6 +10,7 @@ module App = [%styled.div {|
   font-size: 30px;
 |}];
 module Component = [%styled {| margin-left: 10px |}];
+module ComponentWithPadding = [%styled {| padding: 5px |}];
 module Link = [%styled.a {| color: #454545 |}];
 
 ReactDOMRe.renderToElementWithId(
@@ -20,6 +21,9 @@ ReactDOMRe.renderToElementWithId(
     <Link href="http://sancho.dev">
       {React.string("sancho.dev")}
     </Link>
+    <ComponentWithPadding>
+    {React.string("ComponentWithPadding")}
+    </ComponentWithPadding>
   </App>,
   "app"
 );
