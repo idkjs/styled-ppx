@@ -1,5 +1,5 @@
 {
-  "checksum": "3126535d49fe794248325733a29f7a35",
+  "checksum": "5d9c7e818ef5d513966f72d19f420ffd",
   "root": "styled-ppx@link-dev:./esy.json",
   "node": {
     "styled-ppx@link-dev:./esy.json": {
@@ -10,7 +10,9 @@
       "overrides": [],
       "dependencies": [],
       "devDependencies": [
-        "ocaml@4.6.1000@d41d8cd9", "@opam/sedlex@opam:2.1@400920d8",
+        "ocaml@4.6.1000@d41d8cd9",
+        "fswatch@archive:https://github.com/emcrisostomo/fswatch/releases/download/1.13.0/fswatch-1.13.0.tar.gz#sha1:c533fb6d9206814e12541282a76570412f65dc10@f1ebeee9",
+        "@opam/sedlex@opam:2.1@400920d8",
         "@opam/ocaml-migrate-parsetree@opam:1.5.0@3e319dbc",
         "@opam/merlin@opam:3.3.3@d653b06a",
         "@opam/menhir@opam:20190924@004407ff",
@@ -28,6 +30,24 @@
         ]
       },
       "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    "fswatch@archive:https://github.com/emcrisostomo/fswatch/releases/download/1.13.0/fswatch-1.13.0.tar.gz#sha1:c533fb6d9206814e12541282a76570412f65dc10@f1ebeee9": {
+      "id":
+        "fswatch@archive:https://github.com/emcrisostomo/fswatch/releases/download/1.13.0/fswatch-1.13.0.tar.gz#sha1:c533fb6d9206814e12541282a76570412f65dc10@f1ebeee9",
+      "name": "fswatch",
+      "version":
+        "archive:https://github.com/emcrisostomo/fswatch/releases/download/1.13.0/fswatch-1.13.0.tar.gz#sha1:c533fb6d9206814e12541282a76570412f65dc10",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://github.com/emcrisostomo/fswatch/releases/download/1.13.0/fswatch-1.13.0.tar.gz#sha1:c533fb6d9206814e12541282a76570412f65dc10"
+        ]
+      },
+      "overrides": [
+        "esy.lock/overrides/f1ebeee9acc6d5c82f7b7c4ee3e1f762/esy.json"
+      ],
       "dependencies": [],
       "devDependencies": []
     },

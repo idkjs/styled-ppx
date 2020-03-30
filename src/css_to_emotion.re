@@ -354,6 +354,7 @@ let rec render_component_value =
   };
 
   let render_function = ((name, name_loc), (params, params_loc)) => {
+    
     let caml_case_name = to_caml_case(name);
     let ident =
       Exp.ident(
@@ -671,14 +672,35 @@ and render_declaration = (d: Declaration.t, d_loc: Location.t): expression => {
     let args = List.map(v => rcv(v), vs);
     Exp.apply(~loc=d_loc, ident, List.map(a => (Nolabel, a), args));
   };
+/*
+  let render_opacity = () => {
+    let (vs, loc) = d.Declaration.value;
 
+    let arg =
+      switch (List.length(vs)) {
+      | 0 => grammar_error(loc, "opacity should have a single value")
+      | _ =>
+        let (v, loc) = List.hd(vs);
+        switch (v) {
+        | Number(n) => Exp.constant(~loc, Pconst_float(n, None))
+        | _ => grammar_error(loc, "Unexpected opacity value")
+        };
+      };
+
+    let ident =
+      Exp.ident(~loc=name_loc, {txt: Lident("opacity"), loc: name_loc});
+    Exp.apply(~loc=name_loc, ident, [(Nolabel, arg)]);
+  };
+ */
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation */
   let render_animation = () => {
+    
     let animation_ident =
       Exp.ident(
         ~loc=name_loc,
-        {txt: Ldot(Lident("Animation"), "shorthand"), loc: name_loc},
+        {txt: Ldot(Lident("animation"), "shorthand"), loc: name_loc},
       );
+
     let animation_args = ((grouped_param, _)) =>
       List.fold_left(
         (args, (v, loc) as cv) =>
@@ -1121,7 +1143,7 @@ and render_declaration = (d: Declaration.t, d_loc: Location.t): expression => {
 
   let render_opacity = () => {
     let (vs, loc) = d.Declaration.value;
-
+    
     let arg =
       switch (List.length(vs)) {
       | 0 => grammar_error(loc, "opacity should have a single value")
@@ -1136,6 +1158,7 @@ and render_declaration = (d: Declaration.t, d_loc: Location.t): expression => {
     let ident =
       Exp.ident(~loc=name_loc, {txt: Lident("opacity"), loc: name_loc});
     Exp.apply(~loc=name_loc, ident, [(Nolabel, arg)]);
+    // print_endline(ident.name_loc);
   };
 
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/flex */

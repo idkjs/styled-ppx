@@ -8,3 +8,4 @@ module StateLenses = [%lenses
 
 module Component = [%styled ("display: block")]
 module Component = [%styled.section ("display: block")]
+module ComponentWithPadding = [%styled ("padding: 5px")]

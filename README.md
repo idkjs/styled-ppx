@@ -191,6 +191,11 @@ yarn test
 > This tests are more like an end to end tests, that ensures that emotion have the correct methods for each CSS property.
 
 ---
+### Resources
+
+[An introduction to OCaml PPX ecosystem](https://tarides.com/blog/2019-05-09-an-introduction-to-ocaml-ppx-ecosystem)
+
+[yusufyildirim/ppx-examples](https://github.com/yusufyildirim/ppx-examples)
 
 ##### Happy reasoning!
 
